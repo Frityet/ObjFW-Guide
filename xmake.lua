@@ -4,7 +4,7 @@
 --and prefix with other package managers, for example `vcpkg::pcre2` in order to use their packages.
 --Documentation: https://xmake.io/#/manual/global_interfaces?id=add_requires
 local packages = {
-
+    "luajit"
 }
 
 --Sanitizers to use when building in debug mode
@@ -57,16 +57,14 @@ elseif is_config("tls", "mbedtls") then
     add_requires("objfw", { configs = { shared = is_kind("shared"), tls = "mbedtls" } })
 end
 
-target("MyProject")
+add_rules("mode.debug", "mode.release", "mode.check", "mode.minsizerel")
+
+target("ObjFW-Guide-Server")
 do
     set_kind("binary")
     add_packages("objfw")
     add_packages(packages)
     add_options("tls")
-
-    -- on_load(function (target)
-    --     add_requires("objfw", { configs = { shared = is_kind("shared"), tls = config("tls") } })
-    -- end)
 
     add_files("src/**.m")
     add_headerfiles("src/**.h")

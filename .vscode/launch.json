@@ -8,10 +8,11 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/build/macosx/x86_64/debug/MyProject",
+            "program": "${workspaceFolder}/build/macosx/x86_64/debug/ObjFW-Guide-Server",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "Build"
+            "preLaunchTask": "Build",
+            "console": "internalConsole"
         }
     ]
 }
