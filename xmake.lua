@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 --Packages, you can use `xrepo search <name>` to search packages,
 --and prefix with other package managers, for example `vcpkg::pcre2` in order to use their packages.
 --Documentation: https://xmake.io/#/manual/global_interfaces?id=add_requires
